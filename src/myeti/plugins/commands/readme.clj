@@ -7,7 +7,7 @@
 (defn readme-cmd
   "readme # show myeti's readme"
   [_]
-  (def readme (client/get "https://raw.githubusercontent.com/gkspranger/myeti/master/readme.md"))
+  (def readme (client/get "https://raw.githubusercontent.com/gkspranger/myeti/master/README.md"))
   (pprint readme)
   (str (readme :body)))
 
