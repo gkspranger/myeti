@@ -6,7 +6,7 @@
 
 (defn hello-cmd
   "hello # say hello to the bot"
-  []
+  [_]
   (str (capitalize (greeting))
        ". How can I help you today?"))
 
