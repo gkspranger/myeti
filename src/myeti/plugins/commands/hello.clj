@@ -15,6 +15,6 @@
 
 (comment
   
-  (hello-cmd)
+  (hello-cmd "")
   
   )

@@ -12,6 +12,6 @@
 
 (comment
   
-  (echo-cmd {:match "hello"}) 
+  (echo-cmd {:match ["" "hello"]}) 
   
   )
