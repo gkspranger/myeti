@@ -2,7 +2,8 @@
   :main yetibot.core.init
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [yetibot/core "20200506.175620.6cd5d91"]
-                 [clj-http "3.10.1"]]
+                 [clj-http "3.10.1"]
+                 [org.clojure/core.incubator "0.1.4"]]
   :repl-options {:init-ns yetibot.core.repl
                  :timeout 120000}
   :target-path "target/%s"

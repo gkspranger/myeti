@@ -3,7 +3,7 @@
    [yetibot.core.hooks :refer [cmd-hook]]))
 
 (defn echo-cmd
-  "echo <text> # repeat what was sent"
+  "echo <text> # repeat what was said"
   [{[_ match] :match}]
   (str match))
 
