@@ -3,5 +3,5 @@
             [myeti.utils.common :as common]))
 
 (deftest greeting-test
-  (is (= "greetings" (common/greeting 0))))
+  (is (= (nth common/greetings 0) (common/greeting 0))))
 

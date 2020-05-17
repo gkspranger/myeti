@@ -7,11 +7,12 @@
                 "bonjour"
                 "good day"])
 
+(def greetings-last-index (- (count greetings) 1))
+
 (defn greeting
   "return a greeting"
   ([]
-   (let [items (- (count greetings) 1)]
-     (greeting (rand-int items))))
+   (greeting (rand-int greetings-last-index)))
   ([seed]
    (nth greetings seed)))
 
