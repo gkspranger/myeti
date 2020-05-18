@@ -2,14 +2,14 @@
   (:require
    [yetibot.core.hooks :refer [cmd-hook]]
    [clj-http.client :as client]
-   [clojure.pprint :refer [pprint]]))
+   [taoensso.timbre :refer [debug]]))
 
 (defn readme-cmd
   "readme # show myeti's readme"
   [_]
-  (def readme (client/get "https://raw.githubusercontent.com/gkspranger/myeti/master/README.md"))
-  (pprint readme)
-  (str (readme :body)))
+  (let [readme (client/get "https://raw.githubusercontent.com/gkspranger/myeti/master/README.md")]
+    (debug "readme body:" (readme :body))
+    (str (readme :body))))
 
 (cmd-hook #"readme"
           _ readme-cmd)

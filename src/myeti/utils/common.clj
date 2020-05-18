@@ -1,4 +1,5 @@
-(ns myeti.utils.common)
+(ns myeti.utils.common
+  (:require [taoensso.timbre :refer [debug]]))
 
 (def greetings ["greetings"
                 "hi"
@@ -14,7 +15,9 @@
   ([]
    (greeting (rand-int greetings-last-index)))
   ([seed]
-   (nth greetings seed)))
+   (let [rand-greeting (nth greetings seed)]
+     (debug "returned greeting:" rand-greeting)
+     rand-greeting)))
 
 (comment
   
