@@ -1,0 +1,13 @@
+hello world
+
+here's my var: {{myvar}}
+
+here's my loop:
+
+{% for i in myloop %}{{i}}
+{% endfor %}
+
+here's the match: {{match}}
+
+output if mybool is true
+{% if mybool %}it's true!{% endif %}

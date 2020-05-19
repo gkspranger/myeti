@@ -1,22 +1,23 @@
 (ns myeti.plugins.commands.template
   (:require
    [yetibot.core.hooks :refer [cmd-hook]]
-   [clojure.core.strint :refer [<<]]
-   [taoensso.timbre :refer [debug]]))
+   [taoensso.timbre :refer [debug]]
+   [selmer.parser :as parser]))
 
-(defn render
-  "returns evaluated template"
-  [data]
-  (<< 
-"Hello ~(->> data :match),
-I hope you are doing well ~(->> data :when).
-This is my 3rd line."))
+(defn gen-map
+  "generate some map to use in the template"
+  [match]
+  {:match match
+   :myvar "this is an awesome variable"
+   :myloop [1 2 3 "done"]
+   :mybool true})
 
 (defn template-cmd
   "template <text> # an example of using a template"
   [{[_ match] :match}]
   (debug "captured match:" match)
-  (render {:match match, :when "today"}))
+  (parser/render-file "template.txt"
+                      (gen-map match)))
 
 (cmd-hook #"template"
           #"\s*(.+)" template-cmd)
