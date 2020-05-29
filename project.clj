@@ -1,7 +1,7 @@
 (defproject myeti "0.1.0-SNAPSHOT"
   :main yetibot.core.init
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [yetibot/core "20200506.175620.6cd5d91"]
+                 [yetibot/core "20200528.202014.9d1403f"]
                  [com.taoensso/timbre "4.10.0"]
                  [clj-http "3.10.1"]
                  [selmer "1.12.23"]]
