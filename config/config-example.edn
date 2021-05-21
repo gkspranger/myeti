@@ -1,6 +1,0 @@
-{:yetibot
- {:adapters {:myslack {:type "slack"
-                         :token "<slack-token>"}}
-  :command {:embedded {:enabled "false"}
-            :fallback {:enabled "true"}}
-  :db {:url "postgresql://yetibot:yetibot@localhost:5432/yetibot"}}}
